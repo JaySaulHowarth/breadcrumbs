@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Breadcrumbs</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="title_fragment_viewpager">View Images</string>
+    <string name="close_dialog_cd">Close Dialog Window</string>
+    <string name="image_cd">Image</string>
+    <string name="dark_mode_cd">Enable or disable dark mode</string>
+    <string name="image_date">Image Date</string>
+    <string name="pager_num">0/0</string>
+    <string name="share_intent_cd">Share Image</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

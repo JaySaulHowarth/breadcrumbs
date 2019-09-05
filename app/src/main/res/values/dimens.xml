@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="image_pin_size">75dp</dimen>
+    <dimen name="image_cluster_size">100dp</dimen>
+    <dimen name="toobar_height">50dp</dimen>
+</resources>
