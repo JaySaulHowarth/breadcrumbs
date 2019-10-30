@@ -7,6 +7,7 @@ import android.graphics.drawable.ColorDrawable
 import android.graphics.drawable.Drawable
 import android.location.Location
 import android.media.ExifInterface
+import android.media.ExifInterface.TAG_DATETIME
 import android.media.ExifInterface.TAG_DATETIME_ORIGINAL
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
@@ -208,12 +209,12 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
             exif = ExifInterface(imagePathList[i])
             val location = FloatArray(2)
             exif.getLatLong(location)
-            val date = exif.getAttribute(TAG_DATETIME_ORIGINAL)
+            val date = exif.getAttribute(TAG_DATETIME)
             /*By default if an image hasn't been geotagged its tag is 0.00,0.00
             * this places images in the atlantic ocean, I'm making an assumption here that the chances of a user
             * taking a photo at exactly 0.00,0.00 are very slim so I ignore any images with this geotag
             * this prevents images that have not been taken by the user from being plotted to the map*/
-            if (location[0] != 0.00f && location [1] != 0.00f) {
+            if (location[0] != 0.00f && location [1] != 0.00f && date != null) {
                 /*Creating an imagePin for each image found and putting it in the cluster manager*/
                 val imagePin = ImagePin(applicationContext, location[0].toDouble(), location[1].toDouble(), imagePathList[i], date)
                 clusterManager.addItem(imagePin)
